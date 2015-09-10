@@ -3,13 +3,13 @@ lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
-  spec.name          = 'cuba-not_found'
+  spec.name          = 'cuba-errors'
   spec.version       = '0.0.1'
   spec.authors       = ['Patricio Mac Adden']
   spec.email         = ['patriciomacadden@gmail.com']
-  spec.summary       = %q{Not found helper for Cuba.}
-  spec.description   = %q{Not found helper for Cuba.}
-  spec.homepage      = 'https://github.com/patriciomacadden/cuba-not_found'
+  spec.summary       = %q{Error helpers for Cuba.}
+  spec.description   = %q{Error helpers for Cuba.}
+  spec.homepage      = 'https://github.com/patriciomacadden/cuba-errors'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0")

@@ -7,7 +7,7 @@ Not found helper for Cuba.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'cuba-not_found'
+gem 'cuba-errors'
 ```
 
 And then execute:
@@ -19,7 +19,7 @@ $ bundle
 Or install it yourself as:
 
 ```bash
-$ gem install cuba-not_found
+$ gem install cuba-errors
 ```
 
 ## Usage
@@ -28,15 +28,15 @@ See an example:
 
 ```ruby
 require 'cuba'
+require 'cuba/errors'
 require 'cuba/render'
-require 'cuba/not_found'
 
+Cuba.plugin Cuba::Errors
 Cuba.plugin Cuba::Render
-Cuba.plugin Cuba::NotFound
 
 # This setting specifies which view is going to be used for rendering a 404
 # page. If not set, nothing will be rendered.
-Cuba.settings[:not_found][:view] = 'not_found'
+Cuba.settings[:errors][:not_found] = 'not_found'
 
 Cuba.define do
   on default do
@@ -58,4 +58,4 @@ end
 
 ## License
 
-See the [LICENSE](https://github.com/patriciomacadden/cuba-not_found/blob/master/LICENSE).
+See the [LICENSE](https://github.com/patriciomacadden/cuba-errors/blob/master/LICENSE).

@@ -6,13 +6,21 @@ require 'oktobertest'
 require 'oktobertest/contrib'
 require 'rack/test'
 
-require 'cuba/not_found'
+require 'cuba/errors'
 
 Cuba.plugin Cuba::Render
-Cuba.plugin Cuba::NotFound
+Cuba.plugin Cuba::Errors
 
 Cuba.define do
-  on default do
+  on 'forbidden' do
+    forbidden!
+  end
+
+  on 'not_found' do
     not_found!
+  end
+
+  on 'internal_server_error' do
+    internal_server_error!
   end
 end
