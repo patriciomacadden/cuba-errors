@@ -1,6 +1,6 @@
-# Cuba::NotFound
+# Cuba::Errors
 
-Not found helper for Cuba.
+Error helpers for Cuba.
 
 ## Installation
 
