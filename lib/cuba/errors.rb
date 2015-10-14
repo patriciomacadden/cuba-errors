@@ -2,6 +2,9 @@ class Cuba
   module Errors
     def self.setup(app)
       app.settings[:errors] ||= {}
+      if app.settings.include? :render
+        app.settings[:errors][:layout] ||= app.settings[:render][:layout]
+      end
     end
 
     def forbidden!
@@ -22,7 +25,7 @@ class Cuba
       res.status = status
       if settings[:errors].include? view
         res.headers['Content-Type'] = 'text/html; charset=utf-8'
-        render settings[:errors][view]
+        render settings[:errors][view], {}, settings[:errors][:layout]
       end
     end
   end
